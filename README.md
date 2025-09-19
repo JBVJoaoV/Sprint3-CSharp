@@ -1,18 +1,86 @@
-# XpSprint3 - Sistema de Clientes (C# Console)
+# 🧾 XpSprint3 — Sistema de Clientes (C# Console)
 
-Projeto refatorado para atender aos requisitos da entrega:
-- Estruturação de classes (Models, Data, Repositories)
-- Manipulação de banco SQLite (CRUD completo via Entity Framework Core)
-- Interface Console simples
-- Arquivo de banco `clientes.db` é criado automaticamente na pasta do projeto
+## 🎯 Objetivo
+Aplicação console em C# para gerenciar clientes com persistência local (SQLite).  
+Esta versão foi preparada para entrega da disciplina e inclui: estrutura organizada, CRUD com EF Core + SQLite, import/export (JSON/TXT) e diagrama de classes.
 
-## Como rodar
+---
 
-1. Abra um terminal na pasta do projeto (a que contém o `.csproj`).
-2. Execute `dotnet restore` para baixar dependências (inclui EF Core SQLite).
-3. Execute `dotnet run` para compilar e executar a aplicação.
+## ⚙️ Tecnologias utilizadas
+- .NET 8.0
+- C# (Programação orientada a objetos)
+- Entity Framework Core (SQLite)
+- SQLite (arquivo local `clientes.db`)
+- Ferramentas: `dotnet CLI`, editor/IDE (VS Code / Visual Studio)
 
-## Observações
+---
 
-- Se quiser abrir o banco SQLite manualmente, use qualquer visualizador de SQLite apontando para `clientes.db` na pasta do projeto.
-- Para exportar/importar via JSON ou TXT, podemos adicionar comandos extras (posso gerar esse código também).
+## 📂 Estrutura do projeto
+```
+XpSprint3/
+├── Data/
+│   └── AppDbContext.cs          # DbContext (SQLite)
+├── Models/
+│   └── Cliente.cs               # Modelo de domínio (Cliente)
+├── Repositories/
+│   └── ClienteRepository.cs     # CRUD (Repository Pattern)
+├── Program.cs                   # Interface Console + import/export
+├── clientes.db                  # (gerado automaticamente)
+├── clientes.json                # (gerado ao exportar)
+├── clientes.txt                 # (gerado ao exportar)
+├── diagrama.puml                # Diagrama PlantUML
+├── diagrama.png                 # Diagrama em PNG (gerado)
+├── README.md                    # Este arquivo
+└── XpSprint3.csproj
+```
+
+---
+
+## 🧭 Funcionalidades principais
+- CRUD completo sobre `Cliente` (Id, Nome, Email) usando EF Core + SQLite.
+- Exportar clientes para `clientes.json` (JSON formatado).
+- Importar clientes de `clientes.json` (atualiza por Id ou adiciona novo).
+- Exportar clientes para `clientes.txt` (formato `Id;Nome;Email`).
+- Banco `clientes.db` criado automaticamente ao iniciar a aplicação.
+
+---
+
+## ▶️ Como executar (passo a passo)
+1. Abra o terminal na pasta do projeto (onde está `XpSprint3.csproj`).
+2. Restaure dependências:
+   ```bash
+   dotnet restore
+   ```
+3. Rode a aplicação:
+   ```bash
+   dotnet run
+   ```
+4. Use o menu apresentado no console:
+   - `1` Adicionar Cliente
+   - `2` Listar Clientes
+   - `3` Atualizar Cliente
+   - `4` Remover Cliente
+   - `5` Exportar para JSON (`clientes.json`)
+   - `6` Importar de JSON (`clientes.json`)
+   - `7` Exportar para TXT (`clientes.txt`)
+   - `0` Sair
+
+---
+
+## 🗃️ Sobre o banco de dados
+- O projeto usa SQLite; o arquivo `clientes.db` será criado no diretório do projeto automaticamente.
+- Para visualizar ou editar o banco manualmente, use um visualizador de SQLite (DB Browser for SQLite, SQLiteStudio, etc).
+
+---
+
+## 🔁 Import / Export
+- **Exportar JSON**: gera `clientes.json` com lista completa dos clientes (formato legível).
+- **Importar JSON**: se o `Id` do cliente existir, o registro será atualizado; caso contrário, será adicionado (autoincrement).
+- **Exportar TXT**: gera `clientes.txt` com linhas no formato `Id;Nome;Email`.
+
+---
+
+## 🧩 Diagrama de arquitetura
+- Arquivo PlantUML: `diagrama.puml`
+- PNG gerado: `diagrama.png` (incluso no repositório)
+
