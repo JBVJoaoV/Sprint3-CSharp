@@ -18,6 +18,12 @@ Esta versão foi preparada para entrega da disciplina e inclui: estrutura organi
 ## 📂 Estrutura do projeto
 ```
 XpSprint3/
+├── bin/
+│   └── Debug/
+│      └── net8.0/
+│         └── clientes.db                  # (gerado automaticamente)
+│         └── clientes.json                # (gerado ao exportar)
+│         └── clientes.txt                 # (gerado ao exportar)
 ├── Data/
 │   └── AppDbContext.cs          # DbContext (SQLite)
 ├── Models/
@@ -25,10 +31,6 @@ XpSprint3/
 ├── Repositories/
 │   └── ClienteRepository.cs     # CRUD (Repository Pattern)
 ├── Program.cs                   # Interface Console + import/export
-├── clientes.db                  # (gerado automaticamente)
-├── clientes.json                # (gerado ao exportar)
-├── clientes.txt                 # (gerado ao exportar)
-├── diagrama.puml                # Diagrama PlantUML
 ├── diagrama.png                 # Diagrama em PNG (gerado)
 ├── README.md                    # Este arquivo
 └── XpSprint3.csproj
