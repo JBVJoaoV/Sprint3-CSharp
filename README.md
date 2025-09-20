@@ -86,3 +86,12 @@ XpSprint3/
 - Arquivo PlantUML: `diagrama.puml`
 - PNG gerado: `diagrama.png` (incluso no repositório)
 
+---
+
+##   👨‍💻 Integrantes do Projeto
+
+- João Pedro de Souza Vieira Rm: 99805
+- Gabriel Riqueto Reis Rm: 98685
+- Gabriel Oliveira Rodrigues Rm: 98565
+- Leonardo Nicastro Mansur Castillo Rm: 551659
+
